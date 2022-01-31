@@ -324,17 +324,17 @@ public class MyLinkedList<E> extends AbstractList<E> {
 		}
 
 		public int nextIndex() {
-			if(hasNext()){
-				return idx + 1;
-			}
 			return idx;
 		}
 
 		public int previousIndex() {
-			if(hasPrevious()){
-				return idx - 1;
+			return idx -1;
+		}
+
+		public void set(E element) {
+			if(element == null){
+				
 			}
-			return -1;
 		}
 	}
 }
