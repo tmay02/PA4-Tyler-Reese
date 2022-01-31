@@ -350,16 +350,14 @@ public class MyLinkedList<E> extends AbstractList<E> {
 	
 		public void add(E element){
 
-			Node newNode = new Node(data);
+			Node newNode = new Node(element);
 
 			right.prev = newNode;
 			newNode.next = right;
 			newNode.prev = left;
 			left.next = newNode;
 
-			nextIndex();
+			idx++;
 		}
-	
-	
 	}
 }
