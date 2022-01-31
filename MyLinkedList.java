@@ -263,18 +263,6 @@ public class MyLinkedList<E> extends AbstractList<E> {
 		}
 		return curNode;
 	}
-}
-
-public class MyLinkedList<E> extends AbstractList<E> {
-
-    // class variables
-
-
-    // Node inner class
-
-
-    // MyLinkedList methods
-
 
 	protected class MyListIterator implements ListIterator<E> {	
 
@@ -294,5 +282,4 @@ public class MyLinkedList<E> extends AbstractList<E> {
         // more methods, etc.
 
 	}
-
 }
