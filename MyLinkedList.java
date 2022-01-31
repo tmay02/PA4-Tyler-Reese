@@ -333,7 +333,17 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 		public void set(E element) {
 			if(element == null){
-				
+				throw new NullPointerException();
+			}
+
+			if(!canRemoveOrSet){
+				throw new IllegalStateException();
+			}
+
+			if(forward){
+				left.setElement(element);
+			} else {
+				right.setElement(element);
 			}
 		}
 	}
