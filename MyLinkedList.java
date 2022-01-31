@@ -189,7 +189,7 @@ public class MyLinkedList<E> extends AbstractList<E> {
 		if(data == null){
 			throw new NullPointerException("data cannot be null");
 		}
-		if(index < 0 || index > this.size){
+		if(index < 0 || index > this.size - 1){
 			throw new IndexOutOfBoundsException("Index cannot exceed size or be less than 0");
 		}
 		Node curNode = this.head;
