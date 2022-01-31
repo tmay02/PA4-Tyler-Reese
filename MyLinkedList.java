@@ -273,9 +273,16 @@ public class MyLinkedList<E> extends AbstractList<E> {
 		int index;
 		boolean forward;
 		boolean canRemoveOrSet;
-        
 
         // MyListIterator methods
+
+		public MyListIterator() {
+			left = head;
+			right = tail;
+			index = 0;
+			forward = true;
+			canRemoveOrSet = false;
+		}
 
         public boolean hasNext() {
 
