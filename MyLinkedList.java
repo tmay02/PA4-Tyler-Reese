@@ -303,5 +303,25 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			return returnElement;
 		}
 
+		public boolean hasPrevious() {
+			if(left.getElement() == null){
+				return false;
+			}
+			return true;
+		}
+
+		public E previous() {
+			if(!hasNext()){
+				throw new NoSuchElementException();
+			}
+			E returnElement = left.getElement();
+			idx--;
+			left = left.getPrev();
+			right = right.getPrev();
+			forward = false;
+			canRemoveOrSet = true;
+			return returnElement;
+		}
+
 	}
 }
