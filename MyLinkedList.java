@@ -1,6 +1,7 @@
 /**
  * Name: Tyler May, Reese Whitlock
  * ID: A16792035, A17074829
+ * Email: tjmay@ucsd.edu, rwhitlock@ucsd.edu
  * Sources used: Coding done jointly, Week 4 Quiz
  * This file ontains the generic class MyLinkedList, which was modified by us.
  * It also contains the given protected class Node.
