@@ -267,16 +267,16 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 public class MyLinkedList<E> extends AbstractList<E> {
 
-        // class variables
+    // class variables
 
 
-        // Node inner class
+    // Node inner class
 
 
-        // MyLinkedList methods
+    // MyLinkedList methods
 
 
-protected class MyListIterator implements ListIterator<E> {
+	protected class MyListIterator implements ListIterator<E> {	
 
 
         // class variables here
@@ -287,12 +287,12 @@ protected class MyListIterator implements ListIterator<E> {
 
         public boolean hasNext() {
 
-                // your code here
+            // your code here
 
         }
 
         // more methods, etc.
 
-}
+	}
 
 }
