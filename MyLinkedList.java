@@ -331,6 +331,19 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			return idx -1;
 		}
 
+		public void add(E element){
+
+			Node newNode = new Node(element);
+
+			right.prev = newNode;
+			newNode.next = right;
+			newNode.prev = left;
+			left.next = newNode;
+
+			idx++;
+			left = newNode;
+		}
+
 		public void set(E element) {
 			if(element == null){
 				throw new NullPointerException();
@@ -346,19 +359,11 @@ public class MyLinkedList<E> extends AbstractList<E> {
 				right.setElement(element);
 			}
 		}
-	
-	
-		public void add(E element){
 
-			Node newNode = new Node(element);
+		public void remove() {
+			if(!canRemoveOrSet) {
 
-			right.prev = newNode;
-			newNode.next = right;
-			newNode.prev = left;
-			left.next = newNode;
-
-			idx++;
-			left = newNode;
+			}
 		}
 	}
 }
