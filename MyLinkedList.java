@@ -268,7 +268,11 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 
         // class variables here
-
+		Node left;
+		Node right;
+		int index;
+		boolean forward;
+		boolean canRemoveOrSet;
         
 
         // MyListIterator methods
