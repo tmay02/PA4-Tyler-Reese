@@ -358,6 +358,7 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			left.next = newNode;
 
 			idx++;
+			left = newNode;
 		}
 	}
 }
