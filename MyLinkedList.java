@@ -311,7 +311,7 @@ public class MyLinkedList<E> extends AbstractList<E> {
 		}
 
 		public E previous() {
-			if(!hasNext()){
+			if(!hasPrevious()){
 				throw new NoSuchElementException();
 			}
 			E returnElement = left.getElement();
@@ -342,6 +342,7 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 			idx++;
 			left = newNode;
+			canRemoveOrSet = false;
 		}
 
 		public void set(E element) {
@@ -362,8 +363,24 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 		public void remove() {
 			if(!canRemoveOrSet) {
-
+				throw new IllegalStateException();
 			}
+
+			if(forward) {
+				Node newLeft = left.getPrev();
+				right.setPrev(left.getPrev());
+				left.getPrev().setNext(right);
+				left = newLeft;
+				idx--;
+			} else {
+				Node newRight = left.getPrev();
+				right.getNext().setPrev(left);
+				left.setNext(right.getNext());
+				right = newRight;
+			}
+
+			size--;
+			canRemoveOrSet = false;
 		}
 	}
 }
