@@ -277,14 +277,14 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 		public MyListIterator() {
 			left = head;
-			right = tail;
+			right = head.getNext();
 			idx = 0;
 			forward = true;
 			canRemoveOrSet = false;
 		}
 
         public boolean hasNext() {
-			if(right.getNext().getElement() == null){
+			if(right.getElement() == null){
 				return false;
 			}
 			return true;
