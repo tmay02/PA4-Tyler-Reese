@@ -8,6 +8,8 @@
  */
 
 import java.util.AbstractList;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 /** 
  * This class contains all the methods needed to modify and interpret linked
@@ -266,31 +268,40 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 	protected class MyListIterator implements ListIterator<E> {	
 
-
         // class variables here
 		Node left;
 		Node right;
-		int index;
+		int idx;
 		boolean forward;
 		boolean canRemoveOrSet;
-
-        // MyListIterator methods
 
 		public MyListIterator() {
 			left = head;
 			right = tail;
-			index = 0;
+			idx = 0;
 			forward = true;
 			canRemoveOrSet = false;
 		}
 
         public boolean hasNext() {
-
-            // your code here
-
+			if(right.getNext().getElement() == null){
+				return false;
+			}
+			return true;
         }
 
-        // more methods, etc.
+		public E next() {
+			if(!hasNext()){
+				throw new NoSuchElementException();
+			}
+			E returnElement = right.getElement();
+			idx++;
+			left = left.getNext();
+			right = right.getNext();
+			forward = true;
+			canRemoveOrSet = true;
+			return returnElement;
+		}
 
 	}
 }
