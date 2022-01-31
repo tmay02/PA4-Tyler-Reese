@@ -346,5 +346,20 @@ public class MyLinkedList<E> extends AbstractList<E> {
 				right.setElement(element);
 			}
 		}
+	
+	
+		public void add(E element){
+
+			Node newNode = new Node(data);
+
+			right.prev = newNode;
+			newNode.next = right;
+			newNode.prev = left;
+			left.next = newNode;
+
+			nextIndex();
+		}
+	
+	
 	}
 }
