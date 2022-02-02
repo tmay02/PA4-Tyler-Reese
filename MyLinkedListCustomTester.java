@@ -29,7 +29,14 @@ public class MyLinkedListCustomTester {
      */
     @Before
     public void setUp() throws Exception {
+        emptyList = new MyLinkedList();
+        emptyListIter = emptyList.new MyListIterator();
 
+        listLen3 = new MyLinkedList();
+        listLen3.add(1);
+        listLen3.add(2);
+        listLen3.add(3);
+        listLen3Iter = emptyList.new MyListIterator();
     }
 
     /**
@@ -105,7 +112,7 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the add method when [...]
+     * Test the add method when the index is invalid
      */
     @Test
     public void testAdd() {
