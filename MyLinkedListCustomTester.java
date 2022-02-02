@@ -21,7 +21,8 @@ import org.junit.*;
  * does not take into account.
  */
 public class MyLinkedListCustomTester {
-
+    private MyLinkedList emptyList, listLen3;
+    private MyLinkedList.MyListIterator emptyListIter, listLen3Iter;
     /**
      * This sets up the test fixture. JUnit invokes this method before
      * every testXXX method. The @Before tag tells JUnit to run this method
