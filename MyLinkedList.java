@@ -278,6 +278,7 @@ public class MyLinkedList<E> extends AbstractList<E> {
 		boolean forward;
 		boolean canRemoveOrSet;
 
+		//  Implementation of MyListIterator class at index 0
 		public MyListIterator() {
 			left = head;
 			right = head.getNext();
@@ -286,6 +287,10 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			canRemoveOrSet = false;
 		}
 
+		/**
+	 	* Determines if the iterator can move forward
+	 	* @return true if the iterator can move forward, false if it can't
+	 	*/
         public boolean hasNext() {
 			if(right.getElement() == null){
 				return false;
@@ -293,6 +298,10 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			return true;
         }
 
+		/**
+	 	* Moves the iterator one index to the right
+		* @return element of the node iterated over
+		*/
 		public E next() {
 			if(!hasNext()){
 				throw new NoSuchElementException();
@@ -306,6 +315,10 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			return returnElement;
 		}
 
+		/**
+	 	* Moves the iterator one index to the right
+		* @return true if the iterator can move backwards, false if it can't
+		*/
 		public boolean hasPrevious() {
 			if(left.getElement() == null){
 				return false;
@@ -313,6 +326,10 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			return true;
 		}
 
+		/**
+	 	* Moves the iterator one index to the left
+		* @return element of the node iterated over
+		*/
 		public E previous() {
 			if(!hasPrevious()){
 				throw new NoSuchElementException();
@@ -326,14 +343,24 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			return returnElement;
 		}
 
+		/**
+		* @return the current index
+		*/
 		public int nextIndex() {
 			return idx;
 		}
 
+		/**
+		* @return the current index - 1
+		*/
 		public int previousIndex() {
 			return idx -1;
 		}
 
+		/**
+		* Adds node at the index of the iterator, moves the iterator forward
+		* @param element is the data for the new node
+	 	*/
 		public void add(E element){
 
 			Node newNode = new Node(element);
@@ -348,6 +375,11 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			canRemoveOrSet = false;
 		}
 
+		/**
+		* Changes the data of left node if going forward, right if going
+		* backwards
+		* @param element is the data for changed node
+	 	*/
 		public void set(E element) {
 			if(element == null){
 				throw new NullPointerException();
@@ -364,6 +396,10 @@ public class MyLinkedList<E> extends AbstractList<E> {
 			}
 		}
 
+		/**
+		* removes the left node if going forward, removes the right node if
+		* going backwards
+	 	*/
 		public void remove() {
 			if(!canRemoveOrSet) {
 				throw new IllegalStateException();
