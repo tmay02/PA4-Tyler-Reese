@@ -11,6 +11,9 @@
  */
 
 import static org.junit.Assert.*;
+
+import java.util.NoSuchElementException;
+
 import org.junit.*;
 
 /**
@@ -41,11 +44,22 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the hasNext method when [fill in a possible edge case here]
+     * Test hasNext() on empty list and on listLen3 as it iterates through the
+     * list
      */
     @Test
     public void testHasNext() {
+        // Check if iterator has next on empty list
+        assertEquals(false, emptyListIter.hasNext());
 
+        // Checks hasNext as iterator moves through size 3 list
+        assertEquals(true, listLen3Iter.hasNext());
+        listLen3Iter.next();
+        assertEquals(true, listLen3Iter.hasNext());
+        listLen3Iter.next();
+        assertEquals(true, listLen3Iter.hasNext());
+        listLen3Iter.next();
+        assertEquals(false, listLen3Iter.hasNext());
     }
 
     /**
@@ -53,7 +67,29 @@ public class MyLinkedListCustomTester {
      */
     @Test
     public void testNext() {
+        // Checks if exception is thrown when trying to move next in an empty list
+        boolean test = false;
+        try {
+            emptyListIter.next();
+        } catch (NoSuchElementException E) {
+            test = true;
+        }
+        assertTrue(test);
 
+        /**
+         * Checks to see if next() is returning the correct element as it
+         * iterates through ListLen3
+         */
+        assertEquals(1, listLen3Iter.next());
+        assertEquals(2, listLen3Iter.next());
+        assertEquals(3, listLen3Iter.next());
+        test = false;
+        try {
+            listLen3Iter.next();
+        } catch (NoSuchElementException E) {
+            test = true;
+        }
+        assertTrue(test);
     }
 
     /**
@@ -61,7 +97,17 @@ public class MyLinkedListCustomTester {
      */
     @Test
     public void testHasPrevious() {
+        // Check if iterator has next on empty list
+        assertEquals(false, emptyListIter.hasNext());
 
+        // Checks hasNext as iterator moves through size 3 list
+        assertEquals(true, listLen3Iter.hasNext());
+        listLen3Iter.next();
+        assertEquals(true, listLen3Iter.hasNext());
+        listLen3Iter.next();
+        assertEquals(true, listLen3Iter.hasNext());
+        listLen3Iter.next();
+        assertEquals(false, listLen3Iter.hasNext());
     }
 
     /**
