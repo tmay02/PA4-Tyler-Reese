@@ -112,7 +112,7 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the add method when [...]
+     * Test the add method when [...]
      */
     @Test
     public void testAdd() {
