@@ -182,27 +182,48 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the set method when [...]
+     * Test the set method before any next/previous calls
      */
     @Test
     public void testSet() {
-
+        boolean testFail = false;
+        listLen3Iter.forward = true;
+        try {
+            listLen3Iter.set(0);
+        } catch(IllegalStateException E) {
+            testFail = true;
+        }
+        assertTrue(testFail);
     }
 
     /**
-     * TODO: test the remove method when [...]
+     * Test the remove method when the list is empty and forward = true
      */
     @Test
     public void testRemoveTestOne() {
-
+        boolean testFail = false;
+        emptyListIter.forward = true;
+        try {
+            emptyListIter.remove();
+        } catch(IllegalStateException E) {
+            testFail = true;
+        }
+        assertTrue(testFail);
     }
 
     /**
-     * TODO: test the remove method when [fill in another one here]
+     * Test the remove method when the list is empty and forward = false
      */
     @Test
     public void testRemoveTestTwo() {
-
+        boolean testFail = false;
+        emptyListIter.forward = false;
+        try {
+            emptyListIter.remove();
+        } catch(IllegalStateException E) {
+            testFail = true;
+        }
+        assertTrue(testFail);
     }
 
     /**
