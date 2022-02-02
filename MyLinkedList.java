@@ -335,10 +335,10 @@ public class MyLinkedList<E> extends AbstractList<E> {
 
 			Node newNode = new Node(element);
 
-			right.prev = newNode;
-			newNode.next = right;
-			newNode.prev = left;
-			left.next = newNode;
+			right.setPrev(newNode);
+			newNode.setNext(right);
+			newNode.setPrev(left);
+			left.setNext(newNode);
 
 			idx++;
 			left = newNode;
