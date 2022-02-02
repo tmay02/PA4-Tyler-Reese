@@ -113,11 +113,25 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * Test the add method when [...]
+     * Test the add method when the list is empty or at the end of the list
      */
     @Test
     public void testAdd() {
+        emptyListIter.add(0);
+        assertEquals(0, emptyListIter.left.getElement());
+        assertEquals(emptyList.tail.getElement(), 
+                emptyListIter.right.getElement());
 
+        listLen3Iter.left = listLen3.tail.getPrev();
+        listLen3Iter.right = listLen3.tail;
+        listLen3Iter.idx = 3;
+        listLen3Iter.forward = false;
+        listLen3Iter.canRemoveOrSet = true;
+
+        listLen3Iter.add(4);
+        assertEquals(4, listLen3Iter.left.getElement());
+        assertEquals(listLen3.tail.getElement(), 
+                listLen3Iter.right.getElement());
+        assertEquals(4, listLen3Iter.idx);
     }
-
 }
