@@ -1,10 +1,10 @@
 
 /**
  * TODO: Add your file header
- * Name:
- * ID:
- * Email:
- * Sources used: Put "None" if you did not have any external help
+ * Name: Tyler May, Reese Whitlock
+ * ID: A16792035, A17074829
+ * Email: tjmay@ucsd.edu, rwhitlock@ucsd.edu
+ * Sources used: Coding done jointly, Week 4 Quiz
  * Some example of sources used would be Tutors, Zybooks, and Lecture Slides
  * 
  * 2-4 sentence file description here
@@ -29,14 +29,7 @@ public class MyLinkedListCustomTester {
      */
     @Before
     public void setUp() throws Exception {
-        emptyList = new MyLinkedList();
-        emptyListIter = emptyList.new MyListIterator();
 
-        listLen3 = new MyLinkedList();
-        listLen3.add(1);
-        listLen3.add(2);
-        listLen3.add(3);
-        listLen3Iter = emptyList.new MyListIterator();
     }
 
     /**
@@ -112,7 +105,7 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * Test the add method when the index is invalid
+     * TODO: test the add method when [...]
      */
     @Test
     public void testAdd() {
