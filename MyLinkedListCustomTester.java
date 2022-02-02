@@ -37,7 +37,7 @@ public class MyLinkedListCustomTester {
         listLen3.add(1);
         listLen3.add(2);
         listLen3.add(3);
-        listLen3Iter = emptyList.new MyListIterator();
+        listLen3Iter = listLen3.new MyListIterator();
     }
 
     /**
