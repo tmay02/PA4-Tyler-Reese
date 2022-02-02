@@ -1,13 +1,13 @@
 
 /**
- * TODO: Add your file header
  * Name: Tyler May, Reese Whitlock
  * ID: A16792035, A17074829
  * Email: tjmay@ucsd.edu, rwhitlock@ucsd.edu
  * Sources used: Coding done jointly, Week 4 Quiz
  * Some example of sources used would be Tutors, Zybooks, and Lecture Slides
  * 
- * 2-4 sentence file description here
+ * File containing class MyLinkedListCustomTester. Has custom tests that
+ * MyLinkedListPublicTester.java does not contain.
  */
 
 import static org.junit.Assert.*;
@@ -17,11 +17,8 @@ import java.util.NoSuchElementException;
 import org.junit.*;
 
 /**
- * TODO: Add your class header
- * 
- * IMPORTANT: Do not change the method headers and points are awarded
- * only if your test cases cover cases that the public tester file
- * does not take into account.
+ * Tests MyLinkedList.java and the methods within. Sets up two MyLinkedLists
+ * to do this: empyList and listLen3, with corresponding MyListIterators.
  */
 public class MyLinkedListCustomTester {
     private MyLinkedList emptyList, listLen3;
