@@ -49,7 +49,7 @@ public class MyLinkedListCustomTester {
      */
     @Test
     public void testHasNext() {
-        // Check if iterator has next on empty list
+        // Check if iterator hasNext on empty list
         assertEquals(false, emptyListIter.hasNext());
 
         // Checks hasNext as iterator moves through size 3 list
@@ -97,17 +97,17 @@ public class MyLinkedListCustomTester {
      */
     @Test
     public void testHasPrevious() {
-        // Check if iterator has next on empty list
-        assertEquals(false, emptyListIter.hasNext());
+        // Check if iterator hasPrev on empty list
+        assertEquals(false, emptyListIter.hasPrevious());
 
-        // Checks hasNext as iterator moves through size 3 list
-        assertEquals(true, listLen3Iter.hasNext());
+        // Checks hasPrev as iterator moves through size 3 list
+        assertEquals(false, listLen3Iter.hasPrevious());
         listLen3Iter.next();
-        assertEquals(true, listLen3Iter.hasNext());
+        assertEquals(true, listLen3Iter.hasPrevious());
         listLen3Iter.next();
-        assertEquals(true, listLen3Iter.hasNext());
+        assertEquals(true, listLen3Iter.hasPrevious());
         listLen3Iter.next();
-        assertEquals(false, listLen3Iter.hasNext());
+        assertEquals(true, listLen3Iter.hasPrevious());
     }
 
     /**
@@ -115,7 +115,32 @@ public class MyLinkedListCustomTester {
      */
     @Test
     public void testPrevious() {
+        // Checks if exception is thrown when trying to move next in an empty list
+        boolean test = false;
+        try {
+            emptyListIter.previous();
+        } catch (NoSuchElementException E) {
+            test = true;
+        }
+        assertTrue(test);
 
+        /**
+         * Checks to see if next() is returning the correct element as it
+         * iterates through ListLen3
+         */
+        listLen3Iter.next();
+        listLen3Iter.next();
+        listLen3Iter.next();
+        assertEquals(3, listLen3Iter.previous());
+        assertEquals(2, listLen3Iter.previous());
+        assertEquals(1, listLen3Iter.previous());
+        test = false;
+        try {
+            listLen3Iter.previous();
+        } catch (NoSuchElementException E) {
+            test = true;
+        }
+        assertTrue(test);
     }
 
     /**
