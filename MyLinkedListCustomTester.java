@@ -63,7 +63,7 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the next method when [...]
+     * Test next method on empty list and iterating through list
      */
     @Test
     public void testNext() {
@@ -93,7 +93,8 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the hasPrevious method when [fill in another one here]
+     * Test hasNext() on empty list and on listLen3 as it iterates through the
+     * list
      */
     @Test
     public void testHasPrevious() {
@@ -111,7 +112,7 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the previous method when [...]
+     * Test previous method on empty list and iterating through list
      */
     @Test
     public void testPrevious() {
@@ -144,19 +145,40 @@ public class MyLinkedListCustomTester {
     }
 
     /**
-     * TODO: test the nextIndex method when [...]
+     * Test nextIndex method on an empty list and while iterating through list
      */
     @Test
     public void testNextIndex() {
+        assertEquals(0, emptyListIter.nextIndex());
 
+        assertEquals(0, listLen3Iter.nextIndex());
+        listLen3Iter.next();
+        assertEquals(1, listLen3Iter.nextIndex());
+        listLen3Iter.next();
+        assertEquals(2, listLen3Iter.nextIndex());
+        listLen3Iter.next();
+        assertEquals(3, listLen3Iter.nextIndex());               
     }
 
     /**
-     * TODO: test the previousIndex method when [...]
+     * Test previousIndex method on an empty list and while iterating backwards
      */
     @Test
     public void testPreviousIndex() {
+        //empty list
+        assertEquals(-1, emptyListIter.previousIndex());
 
+        //calling previousIndex() while iterating backwards
+        listLen3Iter.next();
+        listLen3Iter.next();
+        listLen3Iter.next();
+        assertEquals(2, listLen3Iter.previousIndex());
+        listLen3Iter.previous();
+        assertEquals(1, listLen3Iter.previousIndex());
+        listLen3Iter.previous();
+        assertEquals(0, listLen3Iter.previousIndex());
+        listLen3Iter.previous();
+        assertEquals(-1, listLen3Iter.previousIndex());
     }
 
     /**
